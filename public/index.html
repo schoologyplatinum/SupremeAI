@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090a12">
+  <meta name="description" content="Supreme AI — ask, explore, create.">
+  <title>Supreme AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".48" stop-color="#a9b4ff"/><stop offset="1" stop-color="#9b5cff"/></linearGradient></defs><path d="M48 12H24C13 12 9 27 22 31l17 5c10 3 7 16-3 16H12" fill="none" stroke="url(#sGrad)" stroke-width="7" stroke-linecap="round"/><path d="M12 52l8-7" stroke="#8c61ff" stroke-width="3" stroke-linecap="round"/></svg></div>
+        <div class="brand-copy"><span>SUPREME <b>AI</b></span><small>ASK · EXPLORE · CREATE</small></div>
+      </div>
+      <button class="new-chat" id="newChat"><span>＋</span> New conversation</button>
+      <div class="side-label">WORKSPACE</div>
+      <button class="nav-item active"><span>◈</span> Chat</button>
+      <div class="history-head"><span class="side-label">RECENT</span><button id="clearHistory" title="Clear conversation history">Clear</button></div>
+      <div class="history-list" id="historyList"></div>
+      <div class="sidebar-bottom">
+        <div class="gemini-chip"><span class="gemini-dot"></span><div><b>Powered by Gemini</b><small>AI engine connected</small></div></div>
+        <div class="profile"><div class="avatar">S</div><div><b>Supreme AI</b><small>Personal workspace</small></div><span class="profile-dots">···</span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="top-title"><span class="status-pulse"></span><span>Supreme AI</span><span class="model-tag">GEMINI</span></div>
+        <div class="top-actions"><span class="online"><i></i> Systems online</span><button class="icon-btn" id="themeButton" title="Toggle appearance">◐</button></div>
+      </header>
+
+      <section class="chat-area" id="chatArea">
+        <div class="welcome" id="welcome">
+          <div class="welcome-emblem"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="big-s">S</div><span class="spark spark-a">✦</span><span class="spark spark-b">✧</span></div>
+          <div class="eyebrow"><span></span> YOUR INTELLIGENT ASSISTANT</div>
+          <h1>Think beyond.<br><span>Go Supreme.</span></h1>
+          <p class="welcome-sub">A smarter space to ask questions, explore ideas, and make things happen.</p>
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Explain a difficult topic in a simple way."><span>✧</span><b>Explain something</b><small>Make complex ideas simple</small></button>
+            <button class="suggestion" data-prompt="Help me write clean, well-organized code for a project."><span>⌘</span><b>Write some code</b><small>Build something new</small></button>
+            <button class="suggestion" data-prompt="Give me five creative project ideas I could start today."><span>✳</span><b>Explore ideas</b><small>Find your next big thing</small></button>
+            <button class="suggestion" data-prompt="Help me make a plan to learn a new skill."><span>↗</span><b>Make a plan</b><small>Turn goals into steps</small></button>
+          </div>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </section>
+
+      <footer class="composer-wrap">
+        <form class="composer" id="chatForm">
+          <textarea id="messageInput" rows="1" placeholder="Message Supreme AI..." aria-label="Message Supreme AI"></textarea>
+          <div class="composer-tools"><span class="composer-hint">↵ to send · Shift + ↵ for new line</span><span class="char-count" id="charCount">0 / 12,000</span><button class="send-btn" id="sendButton" type="submit" aria-label="Send message">↑</button></div>
+        </form>
+        <p class="disclaimer">Supreme AI can make mistakes. Verify important information.</p>
+      </footer>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
